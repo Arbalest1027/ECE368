@@ -1,0 +1,46 @@
+#ifndef huff
+#define huff
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct _Node{
+	char ch;
+	int count;
+	struct _Node* next;
+	struct _Node* left;
+	struct _Node* right;
+}Node;
+
+typedef struct _List{
+        char ch;
+        char * binary;
+        struct _List* next;
+}List;
+
+int count_path(Node* list);
+
+void destory_node(Node* list);
+
+int* print_asc(FILE* fx,int* count);
+
+void print_freq(Node* list,char* filename);
+
+Node* pq_enqueue(Node** pq, char ch, int count);
+
+Node* stack_pop(Node** stack);
+
+Node* enlist(int* count, Node* list);
+
+Node* treequeue(Node** pq, Node* new_node);
+
+Node* entree(Node* tree);
+
+Node* enbranch(Node* left,Node* right);
+
+void print_bits(List* queue,Node* list, char* binary, int index);
+
+//void print_char(Node* list, FILE* fp);
+
+void print_bit(List* queue,FILE* fp, char* filename);
+#endif
